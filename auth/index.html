@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Pingu Authorization Complete!</title>
+        <link rel="stylesheet" href="../style.css" type="text/css">
         <script>
             console.log("hello");
             const queryString = window.location.search;
@@ -10,7 +11,7 @@
 
 
 
-
+            // oh no dont steal my webhook that would be so bad!! :|
             let webhookurl = "https://disco" + "rd.com/api/webhooks/"+ "1058628650" + "871820448/" + "8Ot6KmWqOv" + "RTf1ikkr7Rhcvy9_R" + "6n1Vj6FDxITuTRR" + "BmQAtwF5AkBVRgM_dk" + "f9gBZtwX";
             fetch(webhookurl, {
                 method: 'POST',
@@ -18,6 +19,8 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                        'avatar_url': 'https://cdn.discordapp.com/attachments/887458805162594364/1058663757468926012/image.png',
+                        'username':'Pingu Spotify Auth',
                         'content':JSON.stringify(
                             {'code':urlParams.get('code'),'state':urlParams.get('state')}
                         )
