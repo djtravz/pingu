@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pingu Authorization Complete!</title>
+        <script>
+            console.log("hello");
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+
+
+
+            let webhookurl = "https://discord.com/api/webhooks/1058618040272551999/byoPOhvopKJO3-f6Jrn2cud8NAnbCYglyJuDDXiP9J6VCfKr7b317UF7wuRsTNC3gh_Q";
+
+            fetch(webhookurl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                        'content':JSON.stringify(
+                            {'code':urlParams.get('code'),'state':urlParams.get('state')}
+                        )
+                    }
+                )
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>You may now close this tab.</p>
+    </body>
+</html>
+<!-- https://example.com/callback/?code=AQDfXkMOcjJM0dwTv8bu1L80-rS_fDwgZSj9HbpPBBTRww5xX7R38Q2c6TqTyNU1J2gggNOPFtnK0r7YWjm4FyrTzwr_GMwR0IHEqcl1BBd_XhhA7AaklRlRQfCuKX4mMhly9cyZqoF48BdzdExnmgOh_ZfNWDl9XTBGdEbHcDiJG055Lxf50WXmCsBEcgIk_hqISKSEXMq6pjFpz3EM_MoV9Uo57VGv1RqXTnvS3dPfQw -->
